@@ -377,7 +377,7 @@ class Registro:
             raise DataNonAmmessa("Non si può prenotare una data già trascorsa")
         if giorno.weekday() == GIORNO_CHIUSURA:
             raise DataNonAmmessa("Il circolo è chiuso il martedì")
-        if giorno >= oggi + timedelta(days=ORIZZONTE_GIORNI):
+        if giorno > oggi + timedelta(days=ORIZZONTE_GIORNI):
             raise DataNonAmmessa(
                 f"Si può prenotare al massimo {ORIZZONTE_GIORNI} giorni in anticipo"
             )
